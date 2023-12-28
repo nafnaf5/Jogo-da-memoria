@@ -79,5 +79,59 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\image\bg.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

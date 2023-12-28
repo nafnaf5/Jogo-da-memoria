@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Jogo_da_memoria
 {
-    public class Form1 : System.Windows.Forms.Form
+    public class Form1 : Form
     {
 
    
@@ -12,5 +12,20 @@ namespace Jogo_da_memoria
     {
         InitializeComponent();
     }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
  }
