@@ -3,3 +3,8 @@ D:\Users\2200685\OneDrive\OneDrive - IPLeiria\Aleatorio\Jogo da memoria\Jogo da 
 D:\Users\2200685\OneDrive\OneDrive - IPLeiria\Aleatorio\Jogo da memoria\Jogo da memoria\obj\Debug\Jogo_da_memoria.Properties.Resources.resources
 D:\Users\2200685\OneDrive\OneDrive - IPLeiria\Aleatorio\Jogo da memoria\Jogo da memoria\obj\Debug\Jogo da memoria.csproj.GenerateResource.cache
 D:\Users\2200685\OneDrive\OneDrive - IPLeiria\Aleatorio\Jogo da memoria\Jogo da memoria\obj\Debug\Jogo da memoria.csproj.CoreCompileInputs.cache
+D:\Users\2200685\OneDrive\OneDrive - IPLeiria\Aleatorio\Jogo da memoria\Jogo da memoria\bin\Debug\Jogo da memoria.exe.config
+D:\Users\2200685\OneDrive\OneDrive - IPLeiria\Aleatorio\Jogo da memoria\Jogo da memoria\bin\Debug\Jogo da memoria.exe
+D:\Users\2200685\OneDrive\OneDrive - IPLeiria\Aleatorio\Jogo da memoria\Jogo da memoria\bin\Debug\Jogo da memoria.pdb
+D:\Users\2200685\OneDrive\OneDrive - IPLeiria\Aleatorio\Jogo da memoria\Jogo da memoria\obj\Debug\Jogo da memoria.exe
+D:\Users\2200685\OneDrive\OneDrive - IPLeiria\Aleatorio\Jogo da memoria\Jogo da memoria\obj\Debug\Jogo da memoria.pdb
