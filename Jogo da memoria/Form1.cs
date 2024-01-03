@@ -2,11 +2,14 @@
 using System.Drawing;
 using System.Reflection.Emit;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Jogo_da_memoria
 {
     public  class Form1 : System.Windows.Forms.Form
     {
+        private SoundPlayer player;
+
         public int[,] arr = new int[4, 5];
         public int[] a = new int[17];
         private PictureBox img1;
@@ -18,7 +21,6 @@ namespace Jogo_da_memoria
         private int gc = 0;
         private int Jogador = 1;
         bool temp = false;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox21;
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.PictureBox pictureBox23;
@@ -46,10 +48,8 @@ namespace Jogo_da_memoria
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Timer timer1;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
-        private ToolStripMenuItem aboutToolStripMenuItem1;
+        private ToolStripMenuItem sairToolStripMenuItem;
         private System.ComponentModel.IContainer components;
 
 
@@ -68,29 +68,12 @@ namespace Jogo_da_memoria
             }
             base.Dispose(ExibeTabuleiroposing);
         }
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.player = new System.Media.SoundPlayer();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
@@ -111,11 +94,15 @@ namespace Jogo_da_memoria
             this.pictureBox38 = new System.Windows.Forms.PictureBox();
             this.pictureBox39 = new System.Windows.Forms.PictureBox();
             this.pictureBox40 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
@@ -136,7 +123,15 @@ namespace Jogo_da_memoria
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // player
+            // 
+            this.player.LoadTimeout = 10000;
+            this.player.SoundLocation = "image/flipcard.wav";
+            this.player.Stream = null;
+            this.player.Tag = null;
             // 
             // pictureBox21
             // 
@@ -146,6 +141,7 @@ namespace Jogo_da_memoria
             this.pictureBox21.Size = new System.Drawing.Size(69, 94);
             this.pictureBox21.TabIndex = 0;
             this.pictureBox21.TabStop = false;
+            this.pictureBox21.Click += new System.EventHandler(this.pictureBox21_Click);
             // 
             // pictureBox22
             // 
@@ -155,6 +151,7 @@ namespace Jogo_da_memoria
             this.pictureBox22.Size = new System.Drawing.Size(69, 94);
             this.pictureBox22.TabIndex = 1;
             this.pictureBox22.TabStop = false;
+            this.pictureBox22.Click += new System.EventHandler(this.pictureBox22_Click);
             // 
             // pictureBox23
             // 
@@ -164,6 +161,7 @@ namespace Jogo_da_memoria
             this.pictureBox23.Size = new System.Drawing.Size(69, 94);
             this.pictureBox23.TabIndex = 2;
             this.pictureBox23.TabStop = false;
+            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
             // 
             // pictureBox24
             // 
@@ -173,6 +171,7 @@ namespace Jogo_da_memoria
             this.pictureBox24.Size = new System.Drawing.Size(69, 94);
             this.pictureBox24.TabIndex = 3;
             this.pictureBox24.TabStop = false;
+            this.pictureBox24.Click += new System.EventHandler(this.pictureBox24_Click);
             // 
             // pictureBox25
             // 
@@ -202,6 +201,7 @@ namespace Jogo_da_memoria
             this.pictureBox27.Size = new System.Drawing.Size(69, 94);
             this.pictureBox27.TabIndex = 8;
             this.pictureBox27.TabStop = false;
+            this.pictureBox27.Click += new System.EventHandler(this.pictureBox27_Click);
             // 
             // pictureBox28
             // 
@@ -211,6 +211,7 @@ namespace Jogo_da_memoria
             this.pictureBox28.Size = new System.Drawing.Size(69, 94);
             this.pictureBox28.TabIndex = 7;
             this.pictureBox28.TabStop = false;
+            this.pictureBox28.Click += new System.EventHandler(this.pictureBox28_Click);
             // 
             // pictureBox29
             // 
@@ -220,6 +221,7 @@ namespace Jogo_da_memoria
             this.pictureBox29.Size = new System.Drawing.Size(69, 94);
             this.pictureBox29.TabIndex = 6;
             this.pictureBox29.TabStop = false;
+            this.pictureBox29.Click += new System.EventHandler(this.pictureBox29_Click);
             // 
             // pictureBox30
             // 
@@ -229,6 +231,7 @@ namespace Jogo_da_memoria
             this.pictureBox30.Size = new System.Drawing.Size(69, 94);
             this.pictureBox30.TabIndex = 5;
             this.pictureBox30.TabStop = false;
+            this.pictureBox30.Click += new System.EventHandler(this.pictureBox30_Click);
             // 
             // pictureBox31
             // 
@@ -248,6 +251,7 @@ namespace Jogo_da_memoria
             this.pictureBox32.Size = new System.Drawing.Size(69, 94);
             this.pictureBox32.TabIndex = 13;
             this.pictureBox32.TabStop = false;
+            this.pictureBox32.Click += new System.EventHandler(this.pictureBox32_Click);
             // 
             // pictureBox33
             // 
@@ -257,6 +261,7 @@ namespace Jogo_da_memoria
             this.pictureBox33.Size = new System.Drawing.Size(69, 94);
             this.pictureBox33.TabIndex = 12;
             this.pictureBox33.TabStop = false;
+            this.pictureBox33.Click += new System.EventHandler(this.pictureBox33_Click);
             // 
             // pictureBox34
             // 
@@ -266,6 +271,7 @@ namespace Jogo_da_memoria
             this.pictureBox34.Size = new System.Drawing.Size(69, 94);
             this.pictureBox34.TabIndex = 11;
             this.pictureBox34.TabStop = false;
+            this.pictureBox34.Click += new System.EventHandler(this.pictureBox34_Click);
             // 
             // pictureBox35
             // 
@@ -275,6 +281,7 @@ namespace Jogo_da_memoria
             this.pictureBox35.Size = new System.Drawing.Size(69, 94);
             this.pictureBox35.TabIndex = 10;
             this.pictureBox35.TabStop = false;
+            this.pictureBox35.Click += new System.EventHandler(this.pictureBox35_Click);
             // 
             // pictureBox36
             // 
@@ -294,6 +301,7 @@ namespace Jogo_da_memoria
             this.pictureBox37.Size = new System.Drawing.Size(69, 94);
             this.pictureBox37.TabIndex = 18;
             this.pictureBox37.TabStop = false;
+            this.pictureBox37.Click += new System.EventHandler(this.pictureBox37_Click);
             // 
             // pictureBox38
             // 
@@ -303,6 +311,7 @@ namespace Jogo_da_memoria
             this.pictureBox38.Size = new System.Drawing.Size(69, 94);
             this.pictureBox38.TabIndex = 17;
             this.pictureBox38.TabStop = false;
+            this.pictureBox38.Click += new System.EventHandler(this.pictureBox38_Click);
             // 
             // pictureBox39
             // 
@@ -312,6 +321,7 @@ namespace Jogo_da_memoria
             this.pictureBox39.Size = new System.Drawing.Size(69, 94);
             this.pictureBox39.TabIndex = 16;
             this.pictureBox39.TabStop = false;
+            this.pictureBox39.Click += new System.EventHandler(this.pictureBox39_Click);
             // 
             // pictureBox40
             // 
@@ -321,6 +331,12 @@ namespace Jogo_da_memoria
             this.pictureBox40.Size = new System.Drawing.Size(69, 94);
             this.pictureBox40.TabIndex = 15;
             this.pictureBox40.TabStop = false;
+            this.pictureBox40.Click += new System.EventHandler(this.pictureBox40_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 150;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // button1
             // 
@@ -330,6 +346,7 @@ namespace Jogo_da_memoria
             this.button1.TabIndex = 24;
             this.button1.Text = "Novo Jogo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -339,6 +356,7 @@ namespace Jogo_da_memoria
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 25;
             this.label3.Text = "Jogador1: ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -368,9 +386,34 @@ namespace Jogo_da_memoria
             this.label6.TabIndex = 28;
             this.label6.Text = "0";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem,
+            this.sairToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(488, 24);
+            this.menuStrip1.TabIndex = 29;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(488, 563);
+            this.ClientSize = new System.Drawing.Size(488, 572);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -396,12 +439,12 @@ namespace Jogo_da_memoria
             this.Controls.Add(this.pictureBox23);
             this.Controls.Add(this.pictureBox22);
             this.Controls.Add(this.pictureBox21);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  Jogo da Memória";
             this.Load += new System.EventHandler(this.Form1_Load);
-            
-            
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
@@ -422,6 +465,8 @@ namespace Jogo_da_memoria
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,7 +553,7 @@ namespace Jogo_da_memoria
                     img2.Visible = false;
                 }
                 else
-                {/*
+                {
                     if (img1 == img2)
                     {
                         gc--;
@@ -521,7 +566,7 @@ namespace Jogo_da_memoria
                         else
                             Jogador = 1;
                         defineJogador();
-                    }*/
+                    }
                 }
             }
             else
@@ -536,13 +581,13 @@ namespace Jogo_da_memoria
         {
             if (Jogador == 1)
             {
-                label4.ForeColor = Color.Green;
-                label5.ForeColor = Color.Red;
+                label3.ForeColor = Color.Green;
+                label4.ForeColor = Color.Red;
             }
             else
             {
-                label5.ForeColor = Color.Green;
-                label4.ForeColor = Color.Red;
+                label4.ForeColor = Color.Green;
+                label3.ForeColor = Color.Red;
             }
         }
         private void Form1_Load(object sender, System.EventArgs e)
@@ -550,16 +595,8 @@ namespace Jogo_da_memoria
             this.Form1_ran();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-       {
-                label5.Text = "0";
-                label6.Text = "0";
-                //PictureBox n=(PictureBox)sender;
-                string stn = "image/bg.jpg";
-                    
-            
-        }
-        private void button1_click(object sender, System.EventArgs e)
+       
+        private void button1_Click(object sender, System.EventArgs e)
         {
             label5.Text = "0";
             label6.Text = "0";
@@ -619,30 +656,37 @@ namespace Jogo_da_memoria
         private void pictureBox21_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(0,0, pictureBox21);
+            player.Play();
         }
         private void pictureBox22_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(0, 1, pictureBox22);
+            player.Play();
         }
         private void pictureBox23_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(0, 2, pictureBox23);
+            player.Play();
         }
         private void pictureBox24_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(0, 3, pictureBox24);
+            player.Play();
         }
         private void pictureBox25_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(0, 4, pictureBox25);
+            player.Play();
         }
         private void pictureBox26_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(1, 0, pictureBox26);
+            player.Play();
         }
         private void pictureBox27_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(1, 1, pictureBox27);
+            player.Play();
         }
 
         private void pictureBox28_Click(object sender, EventArgs e)
@@ -652,58 +696,88 @@ namespace Jogo_da_memoria
         private void pictureBox29_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(1, 3, pictureBox29);
+            player.Play();
         }
 
         private void pictureBox30_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(1, 4, pictureBox30);
+            player.Play();
         }
 
         private void pictureBox31_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(2,0, pictureBox31);
+            player.Play();
         }
 
-        private void pictureBox332_Click(object sender, EventArgs e)
+        private void pictureBox32_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(2, 1, pictureBox32);
+            player.Play();
         }
         private void pictureBox33_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(2, 2, pictureBox33);
+            player.Play();
         }
         private void pictureBox34_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(2, 3, pictureBox34);
+            player.Play();
         }
         private void pictureBox35_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(2, 4, pictureBox35);
+            player.Play();
         }
         private void pictureBox36_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(3, 0, pictureBox36);
+            player.Play();
         }
         private void pictureBox37_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(3, 1, pictureBox37);
+            player.Play();
         }
         private void pictureBox38_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(3, 2, pictureBox38);
+            player.Play();
         }
         private void pictureBox39_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(3, 3, pictureBox39);
+            player.Play();
         }
         private void pictureBox40_Click(object sender, EventArgs e)
         {
             ExibeTabuleiro(3, 4, pictureBox40);
+            player.Play();
+        }
+        private void timer1_Tick(object sender, System.EventArgs e)
+        {
+            if (C2 != C1)
+            {
+                img1.Image = new Bitmap("image/bg.jpg");
+                img2.Image = new Bitmap("image/bg.jpg");
+                timer1.Enabled = false;
+            }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            About ab = new About();
+            ab.ShowDialog();
+        }
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
  }
